@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'WhatsApp UI',
       theme: ThemeData(
-        primaryColor: Color(0xff075E54),
+        primaryColor:const  Color(0xff075E54),
       ),
       home: WhatsAppHome(),
     );
@@ -31,34 +31,34 @@ class _WhatsAppHomeState extends State<WhatsAppHome> {
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 84, 82, 82),
-          title: Text('WhatsApp',style:TextStyle(
+          title: const Text('WhatsApp',style:TextStyle(
         fontSize: 34,
         color: Colors.white,
       )),
           actions: [
             IconButton(
-              icon: Icon(Icons.camera_alt),
+              icon: const Icon(Icons.camera_alt),
               onPressed: () {
                 // Handle more options action
               },
             ),
 
             IconButton(
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               onPressed: () {
                 // Handle search action
               },
             ),
             IconButton(
-              icon: Icon(Icons.more_vert),
+              icon: const Icon(Icons.more_vert),
               onPressed: () {
                 // Handle more options action
               },
             ),
           ],
-          bottom: TabBar(
+          bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.chat), text: 'Chats'),
+              Tab(icon:  Icon(Icons.chat), text: 'Chats'),
               Tab(icon: Icon(Icons.ad_units_sharp), text: 'Status'),
               Tab(icon: Icon(Icons.call), text: 'Call'),
             ],
@@ -70,7 +70,7 @@ class _WhatsAppHomeState extends State<WhatsAppHome> {
             Center(
               child: ListView(
                 children:[ Column(children: [
-                  SizedBox(height:12,),
+                  const SizedBox(height:12,),
                   Chats("Ahmed", "Hi","10:20 AM","assets/images/2133155.webp" ),
                   SizedBox(height:12,),
                   Chats("Aslam", "How are you?","2:30 PM","assets/images/OIP.jpg" ),
@@ -157,7 +157,29 @@ class _WhatsAppHomeState extends State<WhatsAppHome> {
                   
                   SizedBox(height:12,),
                   SizedBox(height:12,),
-                  call_option("Create call link", " Share a link for you WhatsApp call", Colors.white,"assets/images/Call-Button-PNG-Clipart.png"),
+
+                  ListTile(  
+      
+                    tileColor:Colors.black, 
+                    title: Text("Create call link",style:TextStyle(
+                      fontSize: 34,
+                      color: Colors.white,
+                    )),
+                    
+                    subtitle: Text("Share a link for you WhatsApp call",style:TextStyle(
+                      color: Colors.white
+                    )),
+                  
+                    leading: CircleAvatar(
+                      backgroundImage:AssetImage("assets/images/Call-Button-PNG-Clipart.png") ,
+                      backgroundColor: Colors.white,
+                    ),
+                    
+                  
+                  ),
+
+
+
                   SizedBox(height:12,),
                   ListView(
                     shrinkWrap: true,
